@@ -70,17 +70,26 @@ public class Main extends Application {
 
         });
 
+        // Botão para limpar todos os campos
+        Button buttonClear = new Button("Limpar");
+        buttonClear.setOnAction(e -> {
+            fieldAltura.setText("");
+            fieldPeso.setText("");
+            labelResultado.setText("");
+            fieldPeso.requestFocus();
+        });
+
         // Layout vertical Vbox onde 10 é o espaçamento vertical
-        VBox layout = new VBox(10, labelPeso, fieldPeso, labelAltura, fieldAltura, buttonCalcular, labelResultado);
+        VBox layout = new VBox(10, labelPeso, fieldPeso, labelAltura, fieldAltura, buttonCalcular, labelResultado, buttonClear);
 
         // Insets é necessário, é igual ao padding do front EX: new Insets(10, 20, 10, 20); // top, right, bottom, left
-        layout.setPadding(new Insets(10));
+        layout.setPadding(new Insets(15));
 
         // Alinha ao centro
         layout.setAlignment(Pos.CENTER);
 
         // Scene e Stage
-        Scene scene = new Scene(layout, 350, 250);
+        Scene scene = new Scene(layout, 400, 300);
         stage.setTitle("Calculadora IMC");
         stage.setScene(scene);
         stage.show();
