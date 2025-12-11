@@ -44,7 +44,26 @@ public class Main extends Application {
                 double altura = Double.parseDouble(fieldAltura.getText().replace(",", "."));
 
                 double imc = peso / (altura * altura);
-                labelResultado.setText(String.format("Seu IMC é: %.2f", imc));
+
+                String classificacao;
+
+                if (imc < 17) {
+                    classificacao = "Muito abaixo do peso";
+                } else if (imc < 18.5) {
+                    classificacao = "Abaixo do peso";
+                } else if (imc < 25) {
+                    classificacao = "Peso normal";
+                } else if (imc < 30) {
+                    classificacao = "Acima do peso";
+                } else if (imc < 35) {
+                    classificacao = "Obesidade I";
+                } else if (imc < 40) {
+                    classificacao = "Obesidade II (severa)";
+                } else {
+                    classificacao = "Obesidade III (mórbida)";
+                }
+
+                labelResultado.setText(String.format("Seu IMC é: %.2f\nClassificação: %s", imc, classificacao));
             } catch (NumberFormatException ex) {
                 labelResultado.setText("Por favor, insira números válidos para peso e altura.");
             }
