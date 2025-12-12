@@ -45,7 +45,7 @@ cd IMCAppFX
 
 # 3. Execute a aplicação
 mvn javafx:run
----
+```
 
 ## ✒️ Autor
 
