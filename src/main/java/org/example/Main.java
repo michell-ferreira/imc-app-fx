@@ -35,9 +35,12 @@ public class Main extends Application {
 
         // Label que mostra o resultado do IMC
         Label labelResultado = new Label();
+        labelResultado.getStyleClass().add("label-resultado");
 
         // Botão para calcular o IMC
         Button buttonCalcular = new Button("Calcular IMC");
+        buttonCalcular.getStyleClass().add("botao-calcular");
+
         buttonCalcular.setOnAction(e -> {
             try {
                 double peso = Double.parseDouble(fieldPeso.getText().replace(",", ".")); // Parse do field
@@ -49,33 +52,44 @@ public class Main extends Application {
 
                 if (imc < 17) {
                     classificacao = "Muito abaixo do peso";
+                    labelResultado.setStyle("-fx-text-fill: #ff9800;"); // laranja
                 } else if (imc < 18.5) {
                     classificacao = "Abaixo do peso";
+                    labelResultado.setStyle("-fx-text-fill: #ffb74d;"); // laranja claro
                 } else if (imc < 25) {
                     classificacao = "Peso normal";
+                    labelResultado.setStyle("-fx-text-fill: #2e7d32;"); // verde
                 } else if (imc < 30) {
                     classificacao = "Acima do peso";
+                    labelResultado.setStyle("-fx-text-fill: #fbc02d;"); // amarelo
                 } else if (imc < 35) {
                     classificacao = "Obesidade I";
+                    labelResultado.setStyle("-fx-text-fill: #d32f2f;"); // vermelho claro
                 } else if (imc < 40) {
                     classificacao = "Obesidade II (severa)";
+                    labelResultado.setStyle("-fx-text-fill: #c62828;"); // vermelho mais forte
                 } else {
                     classificacao = "Obesidade III (mórbida)";
+                    labelResultado.setStyle("-fx-text-fill: #b71c1c;"); // vermelho escuro
                 }
+
 
                 labelResultado.setText(String.format("Seu IMC é: %.2f\nClassificação: %s", imc, classificacao));
             } catch (NumberFormatException ex) {
-                labelResultado.setText("Por favor, insira números válidos para peso e altura.");
+                labelResultado.setText("Insira números válidos para peso e altura");
+                labelResultado.setStyle("-fx-text-fill: black;");
             }
 
         });
 
         // Botão para limpar todos os campos
         Button buttonClear = new Button("Limpar");
+        buttonClear.getStyleClass().add("botao-limpar");
         buttonClear.setOnAction(e -> {
             fieldAltura.setText("");
             fieldPeso.setText("");
             labelResultado.setText("");
+            labelResultado.setStyle("");
             fieldPeso.requestFocus();
         });
 
@@ -91,6 +105,8 @@ public class Main extends Application {
         // Scene e Stage
         Scene scene = new Scene(layout, 400, 300);
         stage.setTitle("Calculadora IMC");
+        String cssPath = getClass().getResource("/style.css").toExternalForm();
+        scene.getStylesheets().add(cssPath);
         stage.setScene(scene);
         stage.show();
     }

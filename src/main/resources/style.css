@@ -1,0 +1,49 @@
+/* root é igual o body do HMTL */
+.root {
+    -fx-font-family: 'Arial'; /* Garantir consistencia independente do sistema operacional */
+    -fx-background-color: #f4f4f4;
+}
+
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; // fill é igual a color no CSS
+}
+
+.text-field {
+    -fx-background-radius: 5; /* arredonda o fundo */
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5; // arredonda a borda
+}
+
+
+.botao-calcular {
+    -fx-background-color: #007bff; /* Azul */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand; /* Seta do mouse vira mãozinha */
+}
+
+.botao-calcular:hover { /* Efeito quando passa o mouse */
+    -fx-background-color: #0056b3;
+}
+
+.botao-limpar {
+    -fx-background-color: #ff4444; /* Vermelhor */
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.botao-limpar:hover {
+    -fx-background-color: #cc0000;
+}
+
+.label-resultado {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #007bff;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
