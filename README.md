@@ -17,6 +17,12 @@ Projeto de uma aplicação desktop desenvolvida em JavaFX para cálculo do IMC (
 
 ## 📜 Sobre o Projeto
 
+> **Nota de Contexto**
+>
+> Este projeto foi desenvolvido inicialmente como parte do curso **"Java Completo"** do professor **Arnaldo Sousa**.  
+> A partir da base ensinada no curso, implementei novas funcionalidades, melhorias estruturais e personalizações visuais com o objetivo de aprofundar meus estudos em **JavaFX** e boas práticas de desenvolvimento.
+
+
 Este projeto foi desenvolvido como um exercício prático para consolidar o uso do JavaFX em aplicações desktop. A aplicação permite ao usuário informar peso e altura, realiza o cálculo do IMC utilizando a fórmula padrão `peso / (altura²)` e exibe o resultado acompanhado de sua classificação conforme os intervalos definidos pela Organização Mundial da Saúde (OMS).
 
 O foco foi a criação de uma interface simples, funcional e visualmente organizada, com validação de dados, tratamento de exceções e separação entre lógica, interface gráfica e estilização via CSS.
